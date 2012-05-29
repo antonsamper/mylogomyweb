@@ -17,5 +17,5 @@ function sizeToBytes(size, format) {
 
 //Example Calls
 sizeToBytes(10,'MB'); //10485760
-sizeToBytes(1,'KB'); //1024
-sizeToBytes(1,'TB'); //1099511627776
+sizeToBytes(1,'KB');  //1024
+sizeToBytes(1,'TB');  //1099511627776
