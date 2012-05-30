@@ -1,16 +1,21 @@
 function sizeToBytes(size, format) {
 
 	"use strict";
+	
+	var KBYTES_IN_BYTES   = 1024,
+	    MEGABYTE_IN_BYTES = 1048576,
+	    GIGABYTE_IN_BYTES = 1073741824,
+	    TERABYTE_IN_BYTES = 1099511627776;
 
 	switch (format) {
 	case 'MB':
-		return size * 1048576;
+		return size * MEGABYTE_IN_BYTES;
 	case 'GB':
-		return size * 1073741824;
+		return size * GIGABYTE_IN_BYTES;
 	case 'TB':
-		return size * 1099511627776;
+		return size * TERABYTE_IN_BYTES;
 	default:
-		return size * 1024;
+		return size * KBYTES_IN_BYTES;
 	}
 
 }
