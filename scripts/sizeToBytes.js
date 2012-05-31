@@ -1,24 +1,28 @@
-function sizeToBytes(size, format) {
+var sizeToBytes = (function () {
 
-	"use strict";
-	
-	var KBYTES_IN_BYTES   = 1024,
-	    MEGABYTE_IN_BYTES = 1048576,
-	    GIGABYTE_IN_BYTES = 1073741824,
-	    TERABYTE_IN_BYTES = 1099511627776;
+	'use strict';
 
-	switch (format) {
-	case 'MB':
-		return size * MEGABYTE_IN_BYTES;
-	case 'GB':
-		return size * GIGABYTE_IN_BYTES;
-	case 'TB':
-		return size * TERABYTE_IN_BYTES;
-	default:
-		return size * KBYTES_IN_BYTES;
-	}
+	var bytesIn = {
+		'KB': 1024,
+		'MB': 1048576,
+		'GB': 1073741824,
+		'TB': 1099511627776
+	};
 
-}
+	return function (amount, format) {
+
+		if (bytesIn[format]) {
+
+			return amount * bytesIn[format];
+
+		}
+
+		return amount * bytesIn.KB;
+
+	};
+
+}());
+
 
 //Example Calls
 sizeToBytes(10,'MB'); //10485760
