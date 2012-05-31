@@ -11,9 +11,11 @@ var sizeToBytes = (function () {
 
 	return function (amount, format) {
 
-		if (bytesIn[format]) {
+		var bytesInSelectedFormat = bytesIn[format];
 
-			return amount * bytesIn[format];
+		if (bytesInSelectedFormat) {
+
+			return amount * bytesInSelectedFormat;
 
 		}
 
