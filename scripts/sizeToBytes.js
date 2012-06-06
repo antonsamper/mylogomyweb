@@ -10,17 +10,7 @@ var sizeToBytes = (function () {
 	};
 
 	return function (amount, format) {
-
-		var bytesInSelectedFormat = bytesIn[format];
-
-		if (bytesInSelectedFormat) {
-
-			return amount * bytesInSelectedFormat;
-
-		}
-
-		return amount * bytesIn.KB;
-
+                return amount * (bytesIn[format] || bytesIn.KB);
 	};
 
 }());
