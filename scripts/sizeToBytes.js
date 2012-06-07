@@ -2,16 +2,25 @@ var sizeToBytes = (function () {
 
 	'use strict';
 
-	var sizes = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+	var base = 1024,
+		sizes = {
+			'KB': Math.pow(base, 1),
+			'MB': Math.pow(base, 2),
+			'GB': Math.pow(base, 3),
+			'TB': Math.pow(base, 4),
+			'PB': Math.pow(base, 5),
+			'EB': Math.pow(base, 6),
+			'ZB': Math.pow(base, 7),
+			'YB': Math.pow(base, 8)
+		};
 
 	return function (amount, format) {
-		return amount * Math.pow(1024, sizes.indexOf(format) + 1);
+		return amount * sizes[format];
 	};
 
 }());
 
-
 //Example Calls
-sizeToBytes(10,'MB'); //10485760
-sizeToBytes(1,'KB');  //1024
-sizeToBytes(1,'TB');  //1099511627776
+sizeToBytes(10, 'MB'); //10485760
+sizeToBytes(1, 'KB');  //1024
+sizeToBytes(1, 'TB');  //1099511627776
