@@ -2,12 +2,13 @@ var bytesToSize = (function () {
 
 	'use strict';
 
-	var base = 1024,
-		sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+	var base	= 1024,
+		baseLog	= Math.log(base),
+		sizes	= ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
 	return function (bytes, precision) {
 
-		var i = parseInt(Math.floor(Math.log(bytes) / Math.log(base)), 10);
+		var i = parseInt(Math.floor(Math.log(bytes) / baseLog), 10);
 
 		return (bytes / Math.pow(base, i)).toFixed(precision || 0) + sizes[i];
 	};
