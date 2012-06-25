@@ -1,7 +1,9 @@
 # sizeToBytes.js 
 A simple function that returns the number of bytes in a human readable size.
 
-sizeToBytes.js by [Anton Samper Rivaya] (http://aeser.co.uk) is licensed under a [Creative Commons Attribution 3.0] (http://creativecommons.org/licenses/by/3.0/) Unported License, Copyright 2012. 
+sizeToBytes.js by [Anton Samper Rivaya] (http://aeser.co.uk) is licensed under a [Creative Commons Attribution 3.0] (http://creativecommons.org/licenses/by/3.0/) Unported License, Copyright 2012.
+
+Contributions from [Willie Oliveira] (https://github.com/willieoliveira) and [Erik Corry] (https://github.com/erikcorry)
 
 ###Syntax:
 
